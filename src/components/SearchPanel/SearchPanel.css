@@ -1,0 +1,47 @@
+#root {
+  --color-black: rgb(63,63,63);
+  --color-blue: rgb(0, 197, 224);
+}
+
+.search-panel {
+  padding: 0;
+  border: 2px solid var(--color-black);
+  height: 44px;
+  display: inline-flex;
+  width: 20rem;
+  border-radius: 4px;
+  overflow: hidden;
+  position: absolute;
+  background: var(--color-black);
+  top: 16px;
+  left: 16px;
+}
+
+.search-panel input {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 0 6px;
+  margin: -1px;
+  flex: 2;
+}
+
+.search-panel div.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background: var(--color-black);
+  margin: 0;
+  font-size: 18px;
+  color: white;
+}
+
+.search-panel-active {
+  border-color: var(--color-blue);
+  background: var(--color-blue);
+}
+.search-panel-active div.button {
+  background: var(--color-blue);
+}
