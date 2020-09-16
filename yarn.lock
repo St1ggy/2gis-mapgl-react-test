@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@2gis/mapgl-clusterer@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.npmjs.org/@2gis/mapgl-clusterer/-/mapgl-clusterer-1.3.0.tgz#9ddc55136548bd176b2f5f6e08f74a5457abfd28"
+  integrity sha512-Bv4164vaQHMDKbJL2C7LdQlqZLtLbyqYQZc/gIbgvuaszEzMDqsvEWXLjvXn0MO/fEdloDBA6pdlhFoxdCuBGQ==
+
 "@2gis/mapgl@^1.2.1":
   version "1.2.1"
   resolved "https://registry.npmjs.org/@2gis/mapgl/-/mapgl-1.2.1.tgz#b341bc5f65c7240faf1e5e2345653a3765f25150"

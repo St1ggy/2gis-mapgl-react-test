@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import './SearchPanel.css';
 
-const getSearchUrl = ({searchQuery, pageSize = 1000, regionId = 32}: { searchQuery: string, pageSize?: number, regionId?: number }) => `https://catalog.api.2gis.ru/3.0/markers?q=${searchQuery}&page_size=${pageSize}&region_id=${regionId}&key=ruhebf8058`;
+const getSearchUrl = ({searchQuery, pageSize = 10000, regionId = 32}: { searchQuery: string, pageSize?: number, regionId?: number }) => `https://catalog.api.2gis.ru/3.0/markers?q=${searchQuery}&page_size=${pageSize}&region_id=${regionId}&key=ruhebf8058`;
 
 export const SearchPanel = ({onGetResult}: { onGetResult: Function }) => {
   // state
