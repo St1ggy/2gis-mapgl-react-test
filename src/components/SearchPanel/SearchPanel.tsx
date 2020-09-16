@@ -1,7 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import classNames from 'classnames';
 import axios from 'axios';
-import { Coords } from 'types';
 
 import './SearchPanel.css';
 
@@ -9,7 +8,7 @@ const getSearchUrl = ({searchQuery, pageSize = 1000, regionId = 32}: { searchQue
 
 export const SearchPanel = ({onGetResult}: { onGetResult: Function }) => {
   // state
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>('магазины');
   const [isActive, setIsActive] = useState<boolean>(false);
 
   // callbacks
@@ -20,14 +19,16 @@ export const SearchPanel = ({onGetResult}: { onGetResult: Function }) => {
     setIsActive(false);
   }, [])
   const onSubmit = useCallback(() => {
-    (async () => {
-      // alert(searchQuery);
-      const {data: {result: {items}}}: { data: { result: { items: Coords[] } } } = await axios.get(getSearchUrl({
-        searchQuery,
-        regionId: 1,
-      }));
-      onGetResult(items.map(({lon, lat}) => ({lon, lat})))
-    })()
+    if (searchQuery.length > 0) {
+      (async () => {
+        const {data: {result: {items}}} = await axios.get(getSearchUrl({
+          searchQuery,
+        }));
+        onGetResult(items.map(({lon, lat}) => ({lon, lat})));
+      })();
+    } else {
+        onGetResult([]);
+    }
   }, [onGetResult, searchQuery])
 
 
